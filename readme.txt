@@ -7,18 +7,18 @@ El objetivo de este proyecto es desarrollar un sistema básico de gestión de ev
 ## Tecnologías Utilizadas
 
 ### Backend
-- **Node.js** con **Express** (o **Python** con **Flask/Django**)
-- **MongoDB** o **PostgreSQL**
+- **Python** con **Flask**
+- **PostgreSQL**
 - **JWT** para autenticación
 
 ### Frontend
-- **React** (o **Vue.js**)
+- **React** 
 - **Bootstrap** para el diseño responsivo
 
 ### Otros
 - **Docker** para contenedores
 - **GitHub Actions** (o **Travis CI/CircleCI**) para CI/CD
-- **Heroku** (o **Vercel**) para desplegar el backend
+-  **Vercel** para desplegar el backend
 - **Netlify** (o **Vercel**) para desplegar el frontend
 
 ## Funcionalidades
@@ -35,28 +35,23 @@ El objetivo de este proyecto es desarrollar un sistema básico de gestión de ev
 
 ### Prerrequisitos
 
-- **Node.js** y **npm** (o **Python** y **pip**)
+- **Node.js** y **npm** 
+- **Python** y **pip**
 - **Docker Desktop**
 - **Visual Studio Code** (u otro editor de código)
-- **MongoDB** o **PostgreSQL** (puedes usar una base de datos local o un servicio en la nube)
+- **PostgreSQL** (puedes usar una base de datos local o un servicio en la nube)
 
 ### Pasos para Configurar el Proyecto
 
 1. Clona el repositorio:
     ```sh
-    git clone https://github.com/tu_usuario/sistema-gestion-eventos.git
+    git clone https://*******
     cd sistema-gestion-eventos
     ```
 
 2. Configura el Backend:
 
-    **Node.js/Express:**
-    ```sh
-    cd backend
-    npm install
-    ```
-
-    **Python/Flask:**
+ **Python/Flask:**
     ```sh
     cd backend
     pip install -r requirements.txt
@@ -73,7 +68,7 @@ El objetivo de este proyecto es desarrollar un sistema básico de gestión de ev
     Crea un archivo `.env` en la carpeta del backend con las siguientes variables:
     ```env
     PORT=5000
-    DB_URL=mongodb://localhost:27017/eventos (o URL de PostgreSQL)
+    DB_URL=PostgreSQL://localhost:27017/eventos 
     JWT_SECRET=your_secret_key
     ```
 
@@ -106,8 +101,8 @@ El objetivo de este proyecto es desarrollar un sistema básico de gestión de ev
 
 ### Despliegue del Backend
 
-1. Crea una cuenta en **Heroku** (o **Vercel**).
-2. Sube el backend a Heroku (o Vercel) siguiendo las instrucciones de su documentación.
+1. Crea una cuenta en  **Vercel**.
+2. Sube el backend Vercel siguiendo las instrucciones de su documentación.
 
 ### Despliegue del Frontend
 
@@ -146,11 +141,8 @@ Si deseas contribuir al proyecto, por favor sigue estos pasos:
 4. Empuja los cambios a la rama (`git push origin feature/nueva-funcionalidad`).
 5. Abre un Pull Request.
 
-## Licencia
-
-Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo `LICENSE` para obtener más detalles.
 
 ## Contacto
 
-Si tienes alguna pregunta o sugerencia, por favor contacta a [tu_nombre] en [tu_email@example.com].
+Si tienes alguna pregunta o sugerencia, por favor contacta a @emifacio en facio.gabrielemiliano@gmail.com.
 

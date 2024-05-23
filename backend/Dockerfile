@@ -1,10 +1,12 @@
-FROM python:3.10-alpine
+FROM python:3.11-slim
 
-WORKDIR /code
+WORKDIR /app
 
-COPY ./requirements.txt ./
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY ./src ./src
+COPY . .
 
-CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "80", "--reload"]
+ENV PYTHONPATH=/app
+
+CMD ["python", "app/main.py"]

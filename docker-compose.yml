@@ -1,8 +1,17 @@
+version: "3.8"
+
 services:
   backend:
     build: ./backend
+    command: flask run --host=0.0.0.0 --port=8000
     ports:
       - "8000:8000"
+    environment:
+      - FLASK_APP=app.main
+      - FLASK_ENV=development
+      - DATABASE_URL=postgresql://myuser:mypassword@db:5432/mydatabase
+      - JWT_SECRET_KEY=myjwtsecret
+      - SECRET_KEY=mysecret
     depends_on:
       - db
 
@@ -10,17 +19,31 @@ services:
     build: ./frontend
     ports:
       - "5173:5173"
+    environment:
+      - CHOKIDAR_USEPOLLING=true
 
   db:
     image: postgres:13
+    restart: always
     environment:
-      POSTGRES_USER: anitalavalatina
-      POSTGRES_PASSWORD: anitalavalatina
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
       POSTGRES_DB: mydatabase
+      DATABASE_HOST: 127.0.0.1
     ports:
       - "5432:5432"
     volumes:
       - db_data:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "admin@admin.com"
+      PGADMIN_DEFAULT_PASSWORD: "admin"
+    ports:
+      - "80:80"
+    depends_on:
+      - db
 
 volumes:
   db_data:
